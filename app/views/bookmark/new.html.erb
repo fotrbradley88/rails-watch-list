@@ -1,0 +1,4 @@
+<h1>New Bookmark</h1>
+<%= form_with(model: [@list, @bookmark], url: list_bookmarks_path(@list)) do |form| %>
+  <%= form.label :movie_id %>
+  <%=
