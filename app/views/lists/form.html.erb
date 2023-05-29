@@ -1,0 +1,5 @@
+<%= form_with model: @list, url: lists_path, local: true, html: { multipart: true } do |form| %>
+  <!-- Other form fields -->
+  <%= form.file_field :image %>
+  <%= form.submit 'Create List' %>
+<% end %>

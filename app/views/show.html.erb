@@ -1,0 +1,29 @@
+<% if @list.image.present? %>
+  <%= image_tag @list.image.url %>
+<% else %>
+  <!-- Add a default image or placeholder if no image is present -->
+  <%= image_tag 'default_image.jpg' %>
+<% end %>
+
+<!-- Display other list details -->
+<h1><%= @list.title %></h1>
+<p>Description: <%= @list.description %></p>
+
+<!-- Display movies -->
+<ul>
+  <% @list.movies.each do |movie| %>
+    <li>
+      <h3><%= movie.title %></h3>
+      <p>Release Year: <%= movie.release_year %></p>
+      <p>Genre: <%= movie.genre %></p>
+      <!-- Add more movie details as needed -->
+
+      <!-- You can also display the movie poster image if available -->
+      <% if movie.image.present? %>
+        <%= image_tag movie.image.url %>
+      <% else %>
+        <%= image_tag 'default_movie_image.jpg' %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

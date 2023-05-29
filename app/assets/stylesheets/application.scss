@@ -10,3 +10,64 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+// Custom styles for Watchlists
+// Define variable values
+$font-family-base: Arial, sans-serif;
+$text-color: #333; // Example text color value
+$background-color: #fff; // Example background color value
+$primary-color: #f00; // Example primary color value
+$header-text-color: #000; // Example header text color value
+$button-text-color: #fff; // Example button text color value
+$card-background-color: #ddd; // Example card background color value
+$card-text-color: #333; // Example card text color value
+$footer-background-color: #999; // Example footer background color value
+$footer-text-color: #fff; // Example footer text color value
+
+// Body styles
+body {
+  font-family: $font-family-base;
+  color: $text-color;
+  background-color: $background-color;
+}
+
+// Header styles
+.header {
+  background-color: $primary-color;
+  color: $header-text-color;
+  padding: 10px;
+  // Add more styles as needed
+}
+
+// Button styles
+.button {
+  background-color: $primary-color;
+  color: $button-text-color;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  // Add more styles as needed
+}
+
+// Card styles
+.card {
+  background-color: $card-background-color;
+  color: $card-text-color;
+  padding: 10px;
+  border-radius: 10px;
+  // Add more styles as needed
+}
+
+// Form styles
+.form {
+  // Add form styles here
+}
+
+// Footer styles
+.footer {
+  background-color: $footer-background-color;
+  color: $footer-text-color;
+  padding: 10px;
+  // Add more styles as needed
+}

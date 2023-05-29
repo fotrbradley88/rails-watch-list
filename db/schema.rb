@@ -10,9 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_25_151626) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_28_092053) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookmarks", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "bookmarks_and_lists", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -26,6 +33,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_25_151626) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "films", force: :cascade do |t|
+    t.string "title"
+    t.integer "release_year"
+    t.string "genre"
+    t.bigint "list_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["list_id"], name: "index_films_on_list_id"
+  end
+
   create_table "lists", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -37,4 +54,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_25_151626) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "films", "lists"
 end

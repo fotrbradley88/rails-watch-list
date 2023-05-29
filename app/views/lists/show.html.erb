@@ -1,0 +1,19 @@
+<h1><%= @list.title %></h1>
+<p><%= @list.description %></p>
+
+<!-- Display movies -->
+<div class="movie-container">
+  <% @list.movies.each do |movie| %>
+    <div class="movie-card">
+      <% if movie.image.present? %>
+        <%= image_tag movie.image.url, class: "movie-image" %>
+      <% else %>
+        <%= image_tag 'default_movie_image.jpg', class: "movie-image" %>
+      <% end %>
+      <h3><%= movie.title %></h3>
+      <p>Release Year: <%= movie.release_year %></p>
+      <p>Genre: <%= movie.genre %></p>
+      <!-- Add more movie details as needed -->
+    </div>
+  <% end %>
+</div>
